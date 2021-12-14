@@ -31,7 +31,7 @@ def get_paths(start, end):
 
 
 with open("/home/rwr/advent/day12/input.txt", "r") as input_file:
-    paths = [path.strip() for path in input_file.readlines()]
+    paths = input_file.read().splitlines()
     all_paths = []
     _map = {}
     for path in paths:

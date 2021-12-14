@@ -2,7 +2,7 @@ SIZE = 1000
 vent_map = [[0 for j in range(SIZE)] for i in range(SIZE)]
 
 with open("/home/rwr/advent/day5/input.txt", "r") as input_file:
-    lines = input_file.readlines()
+    lines = input_file.read().splitlines()
     for line in lines:
         coords = line.split(" ")
         x1, y1 = coords[0].split(",")

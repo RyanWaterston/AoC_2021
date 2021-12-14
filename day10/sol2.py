@@ -1,25 +1,14 @@
 with open("/home/rwr/advent/day10/input.txt", "r") as input_file:
-    lines = input_file.readlines()
+    lines = input_file.read().splitlines()
 
-    chunk_tags = {
-        '(' : ')',
-        '[' : ']',
-        '{' : '}',
-        '<' : '>'
-    }
-    score_map = {
-        ')' : 1,
-        ']' : 2,
-        '}' : 3,
-        '>' : 4
-    }
+    chunk_tags = {"(": ")", "[": "]", "{": "}", "<": ">"}
+    score_map = {")": 1, "]": 2, "}": 3, ">": 4}
 
     wrong = []
     incomplete = []
     for line in lines:
-        line = line.strip()
         incomplete.append(line)
-        #print(f"Processing Line: {line}")
+        # print(f"Processing Line: {line}")
         chunks_rem = []
 
         for c in line:
@@ -29,7 +18,7 @@ with open("/home/rwr/advent/day10/input.txt", "r") as input_file:
             elif c in chunk_tags.values():
                 next_tag = chunks_rem.pop()
                 if c != next_tag:
-                    #print(f"\nExpected {next_tag} but found {c}")
+                    # print(f"\nExpected {next_tag} but found {c}")
                     wrong.append(c)
                     incomplete.remove(line)
                     break

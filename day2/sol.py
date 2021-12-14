@@ -1,5 +1,5 @@
 with open("/home/rwr/advent/day2/input.txt", "r") as input_file:
-    lines = input_file.readlines()
+    lines = input_file.read().splitlines()
     init_pos = [0, 0]
     for line in lines:
         direction, distance = line.split(" ")

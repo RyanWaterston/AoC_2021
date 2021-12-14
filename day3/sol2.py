@@ -18,7 +18,7 @@ def get_rate(values, _type="oxygen"):
 
 
 with open("/home/rwr/advent/day3/input.txt", "r") as input_file:
-    lines = input_file.readlines()
+    lines = input_file.read().splitlines()
 
     oxy = get_rate(lines, _type="oxygen")
     co2 = get_rate(lines, _type="co2")

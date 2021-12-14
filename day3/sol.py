@@ -1,7 +1,7 @@
 BITS = 12
 
 with open("/home/rwr/advent/day3/input.txt", "r") as input_file:
-    lines = input_file.readlines()
+    lines = input_file.read().splitlines()
     one_bits = [0 for i in range(BITS)]
     gamma_bits = ["0" for i in range(BITS)]
     epsilon_bits = ["1" for i in range(BITS)]

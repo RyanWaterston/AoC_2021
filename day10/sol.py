@@ -1,18 +1,8 @@
 with open("/home/rwr/advent/day10/input.txt", "r") as input_file:
-    lines = input_file.readlines()
+    lines = input_file.read().splitlines()
 
-    chunk_tags = {
-        '(' : ')',
-        '[' : ']',
-        '{' : '}',
-        '<' : '>'
-    }
-    score_map = {
-        ')' : 3,
-        ']' : 57,
-        '}' : 1197,
-        '>' : 25137
-    }
+    chunk_tags = {"(": ")", "[": "]", "{": "}", "<": ">"}
+    score_map = {")": 3, "]": 57, "}": 1197, ">": 25137}
 
     wrong = []
     for line in lines:
@@ -26,7 +16,7 @@ with open("/home/rwr/advent/day10/input.txt", "r") as input_file:
             elif c in chunk_tags.values():
                 next_tag = chunks_rem.pop()
                 if c != next_tag:
-                    print(f"\nExpected {next_tag} but found {c}")
+                    print(f"Expected {next_tag} but found {c}")
                     wrong.append(c)
                     break
 

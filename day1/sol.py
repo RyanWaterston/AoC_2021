@@ -1,5 +1,5 @@
 with open("/home/rwr/advent/day1/input.txt") as input_file:
-    lines = input_file.readlines()
+    lines = input_file.read().splitlines()
     increased = 0
     for idx, line in enumerate(lines[1:]):
         if int(line) > int(lines[idx]):
