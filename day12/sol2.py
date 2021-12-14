@@ -34,27 +34,12 @@ with open("/home/rwr/advent/day12/input.txt", "r") as input_file:
     paths = [path.strip() for path in input_file.readlines()]
     all_paths = []
     _map = {}
-    _counts = {}
     for path in paths:
         _from, _to = path.split("-")
         _map.setdefault(_from, []).append(_to)
         _map.setdefault(_to, []).append(_from)
 
-    for k in _map.keys():
-        if k.islower() and k not in ["start", "end"]:
-            _counts[k] = 1
-        else:
-            _counts[k] = -1
-
-    print(f"Mappings:")
-    print(_map)
-
     get_paths("start", "end")
 
-    print(f"Paths: ")
-    all_paths = set(map(tuple, all_paths))
-    all_paths = map(list, all_paths)
-    all_paths = sorted(all_paths)
-    # for p in all_paths:
-    #    print(p)
+    all_paths = list(set(map(tuple, all_paths)))
     print(f"Possible Paths: {len(all_paths)}")
