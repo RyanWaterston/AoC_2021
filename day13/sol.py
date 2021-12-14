@@ -1,4 +1,4 @@
-with open("/home/rwr/advent/day13/input2.txt", "r") as input_file:
+with open("/home/rwr/advent/day13/input.txt", "r") as input_file:
     lines = input_file.read()
     coords, folds = lines.split("\n\n")
     coords = [list(map(int, coord.split(","))) for coord in coords.split("\n")]
